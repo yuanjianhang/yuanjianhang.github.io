@@ -119,7 +119,7 @@
       <time datetime="2014-07-20T21:52:08.000Z"><a href="/2014/07/21/markdown_learn/">周一, 7月 21 2014, 5:52:08 凌晨</a></time>
 
   
-    <h1 class="title"><a href="/2014/07/21/markdown_learn/">markdown_learn</a></h1>
+    <h1 class="title"><a href="/2014/07/21/markdown_learn/">Markdown学习</a></h1>
   
 
 
@@ -137,7 +137,7 @@
 <p>关于markdown的一些概念请自己google。这里附上<a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">wiki地址。</a></p>
 </blockquote>
 <h2 id="怎样看这篇笔记">怎样看这篇笔记</h2>
-<p>我个人建议打开一个markdown编辑器，一边看一边敲代码，估计半个小时用不了就明白了。编辑器一定要支持实时预览功能，mac平台下有macDown，其它平台诸君自己搜索吧。</p>
+<p>我个人建议打开一个markdown编辑器，一边看一边敲代码，估计半个小时用不了就明白了。编辑器一定要支持实时预览功能，mac平台下有macDown，其它平台诸君自己搜索吧。这里列出一个<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">web版编辑器</a>。</p>
 <h2 id="Markdown_语法">Markdown 语法</h2>
 <h3 id="段落">段落</h3>
 <p>在markdown中，段落文本之间间隔一个空行就会自动分割成两个段落。</p>
@@ -171,7 +171,65 @@ _   底线
 <pre><code>这里是一个<span class="constant">tab</span>键创造出来的。
 这里是一个<span class="constant">tab</span>键创造出来的。
 这里是一个<span class="constant">tab</span>键创造出来的。
-</code></pre>
+</code></pre><h3 id="引用">引用</h3>
+<p>在段落的开头加上右尖括号(“&gt;”)就变为引用，引用可以嵌套，加上两个右尖括号(“ &gt;&gt;”)就可以，以此类推，可以加入多级引用，下面给出一个引用：</p>
+<blockquote>
+<p>这里是一个引用。</p>
+<blockquote>
+<p>这里是引用里面嵌套了一个引用。</p>
+</blockquote>
+<p>引用结束。</p>
+</blockquote>
+<h3 id="列表">列表</h3>
+<p>列表分为：无序列表和有序列表。<br>无序列表使用星号、加号或是减号作为列表标记：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">* </span>无序列表1</div><div class="line"><span class="bullet">* </span>无序列表2</div><div class="line"><span class="bullet">* </span>无序列表3</div></pre></td></tr></table></figure><br>或者：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="addition">+ 或者 - 也可以</span></div></pre></td></tr></table></figure>
+
+<p>翻译出来就是：</p>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+<li>无序列表3</li>
+</ul>
+<p>有序列表则使用数字接着一个英文句点：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>有序列表1</div><div class="line"><span class="bullet">2. </span>有序列表2</div><div class="line"><span class="bullet">3. </span>有序列表3</div></pre></td></tr></table></figure><br>翻译出来就是：</p>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+<li>有序列表3</li>
+</ol>
+<h3 id="分割线">分割线</h3>
+<p>用三个以上的星号、减号、底线来建立一个分割线，下面就是一个分割线：</p>
+<hr>
+<h3 id="链接">链接</h3>
+<p>链接有两种语法：行内式和参考式。</p>
+<p>行内式的语法为：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是一个[<span class="link_label">链接</span>](<span class="link_url">http://yuanjianhang.github.io "这里是链接的title"</span>)，可以跳转到本博客的首页。</div></pre></td></tr></table></figure><br>效果如下：<br>这是一个<a href="http://yuanjianhang.github.io" title="这里是链接的title" target="_blank" rel="external">链接</a>，可以跳转到本博客的首页。</p>
+<p>参考式的语法为：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="link_reference">link_id</span>]:<span class="link_url"> http://yuanjianhang.github.io "这里是链接的title"</span><span class="link_url"></span></div><div class="line">这是一个[参考式链接][link_id]，可以跳转到本博客的首页。</div></pre></td></tr></table></figure><br>翻译出来就是：</p>
+<p>这是一个<a href="http://yuanjianhang.github.io" title="这里是链接的title" target="_blank" rel="external">参考式链接</a>，可以跳转到本博客的首页。</p>
+<h3 id="图片">图片</h3>
+<p>图片跟链接语法类似，并且也有两种语法：行内式和参考式。</p>
+<p>行内式：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">Alt text</span>](<span class="link_url">imageUrl "Optional title"</span>)</div></pre></td></tr></table></figure><br>就是一个惊叹号，紧接着一个方括号(图片的替代文字)，再紧接着一个普通括号(里面定义网址和title文字)。</p>
+<p>参考式：</p>
+<p>跟链接的参考式很相似：</p>
+<pre><code>![<span class="link_label">Alt text</span>][<span class="link_reference">id</span>]
+[<span class="link_reference">id</span>]:<span class="link_url"> imageUrl "imageTitle"</span>
+</code></pre><h3 id="强调">强调</h3>
+<p>使用星号(*)好下划线(_)作为强调的语法。</p>
+<p>一段文字，前后个一个星号（或者下划线）转以后会被\<em\>标签包裹。前后个两个星号（或者下划线）包裹一些文字，转以后，这些文字会被\<strong\>标签包裹。</strong\></em\></p>
+<p>如下：</p>
+<pre><code>这里是一段<span class="emphasis">*加强调*</span>的文字。
+</code></pre><p>效果如下：</p>
+<p>这里是一段<em>加强调</em>的文字。</p>
+<pre><code>这里是一段<span class="strong">**加强调**</span>的文字。
+</code></pre><p>效果如下：</p>
+<p>这里是一段<strong>加强调</strong>的文字。</p>
+<hr>
+<h3 id="结束语">结束语</h3>
+<p>这篇Markdown的语法介绍就到此结束。写这篇博客也让我自己学会了怎么使用markdown，以后也能方便查阅。<br>如果同时能帮助到别人，自己也是荣幸之至。</p>
+<p>注：更详细的文档，请查阅<a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">markdown wiki</a>。</p>
+
       
     </div>
     <footer>
